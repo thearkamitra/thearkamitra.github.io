@@ -1,1 +1,1 @@
-[My website](https://github.com/thearkamitra/thearkamitra.github.io)!
+[My website](https://thearkamitra.github.io/)!
