@@ -2,416 +2,1112 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Arka Mitra</title>
-
+    <title>Arka Mitra - ML Engineer & Software Developer</title>
+    <meta name="description" content="Arka Mitra - ETH Zürich graduate with Swiss B permit. Experienced in NLP, Computer Vision, and Software Engineering. Available for immediate hiring.">
     <meta name="author" content="Arka Mitra">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thearkamitra.github.io/">
+    <meta property="og:title" content="Arka Mitra - ML Engineer & Software Developer">
+    <meta property="og:description" content="ETH Zürich graduate with Swiss B permit. Experienced in NLP, Computer Vision, and Software Engineering.">>
+    <meta property="og:image" content="https://thearkamitra.github.io/images/arka_mitra.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thearkamitra.github.io/">
+    <meta property="twitter:title" content="Arka Mitra - ML Engineer & Software Developer">
+    <meta property="twitter:description" content="ETH Zürich graduate with Swiss B permit. Experienced in NLP, Computer Vision, and Software Engineering.">
+    <meta property="twitter:image" content="https://thearkamitra.github.io/images/arka_mitra.jpg">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {}
+        }
+      }
+    </script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      body { font-family: 'Inter', sans-serif; }
+      .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+      .hover-lift { transition: transform 0.3s ease; }
+      .hover-lift:hover { transform: translateY(-5px); }
+      
+      /* Fun scrolling effects */
+      .parallax-bg {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      
+      @keyframes floating {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      .bounce-in {
+        animation: bounceIn 0.8s ease-out;
+      }
+      
+      @keyframes bounceIn {
+        0% { transform: scale(0.3) translateY(50px); opacity: 0; }
+        50% { transform: scale(1.05) translateY(-10px); opacity: 0.8; }
+        70% { transform: scale(0.9) translateY(5px); opacity: 0.9; }
+        100% { transform: scale(1) translateY(0); opacity: 1; }
+      }
+      
+      .slide-up {
+        animation: slideUp 0.6s ease-out;
+      }
+      
+      @keyframes slideUp {
+        0% { transform: translateY(100px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+      
+      .pulse-glow {
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+      
+      @keyframes pulseGlow {
+        0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+        50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.6); }
+      }
+      
+      .typewriter {
+        overflow: hidden;
+        border-right: 2px solid;
+        white-space: nowrap;
+        animation: typewriter 3s steps(40) 1s 1 normal both, blinkCursor 1s steps(2) infinite;
+      }
+      
+      @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      
+      @keyframes blinkCursor {
+        from, to { border-color: transparent; }
+        50% { border-color: white; }
+      }
+      
+      .wobble:hover {
+        animation: wobble 0.8s ease-in-out;
+      }
+      
+      @keyframes wobble {
+        0%, 100% { transform: rotate(0deg); }
+        15% { transform: rotate(-5deg); }
+        30% { transform: rotate(5deg); }
+        45% { transform: rotate(-3deg); }
+        60% { transform: rotate(3deg); }
+        75% { transform: rotate(-1deg); }
+      }
+      
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .stagger-1 { transition-delay: 0.1s; }
+      .stagger-2 { transition-delay: 0.2s; }
+      .stagger-3 { transition-delay: 0.3s; }
+      .stagger-4 { transition-delay: 0.4s; }
+      
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom scroll progress indicator */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        z-index: 9999;
+        transition: width 0.3s ease;
+      }
+    </style>
   </head>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Arka Mitra
-                </p>
-              <p>I recently graduated my masters programme in the Department of Information Technology and Electrical Engineering at ETH Zurich, specializing in machine learning and signal processing. I am interested in computer vision, deep learning, generative AI, and image processing. Most of my research interest is about scene understanding and having a higher level understanding of the physical world. I currently hold a valid work B permit in Switzerland and am actively seeking for a job. 
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white dark:bg-gray-900 shadow-lg fixed w-full top-0 z-50 transition-colors duration-300" data-aos="fade-down">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="text-xl font-bold text-gray-900 dark:text-white">Arka Mitra</div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+            <a href="#news" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">News</a>
+            <a href="#publications" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Publications</a>
+            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+            <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+            <!-- Dark Mode Toggle -->
+            <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              <svg id="sunIcon" class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+              </svg>
+              <svg id="moonIcon" class="w-5 h-5 text-gray-700 dark:text-gray-300 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center space-x-2">
+            <!-- Dark Mode Toggle for Mobile -->
+            <button id="darkModeToggleMobile" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              <svg class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+              </svg>
+              <svg class="w-5 h-5 text-gray-700 dark:text-gray-300 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+            <button onclick="toggleMobileMenu()" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+          <a href="#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+          <a href="#news" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">News</a>
+          <a href="#publications" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Publications</a>
+          <a href="#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+          <a href="#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="gradient-bg py-32 mt-16 parallax-bg">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 floating" data-aos="fade-up">Arka Mitra</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed typewriter" data-aos="fade-up" data-aos-delay="200">
+          ETH Zürich Graduate | Swiss B Permit | ML Engineer & Software Developer — Ready to build amazing things
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+          <a href="data/CV_Arka_Mitra.pdf" target="_blank" 
+             class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 pulse-glow wobble">
+            <i class="fas fa-download mr-2"></i>Download CV
+          </a>
+          <a href="mailto:arka.mitra@alumni.ethz.ch" 
+             class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all wobble">
+            <i class="fas fa-envelope mr-2"></i>Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-2/3" data-aos="fade-right">
+            <h2 class="text-4xl font-bold mb-6 text-gray-900 dark:text-white">About Me</h2>
+            <div class="text-lg text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
+              <p>
+                I'm an ETH Zürich graduate with a Swiss B permit and immediate availability for engineering roles. With experience spanning NLP, Computer Vision, and Software Engineering, I've built production-grade systems that serve thousands of users daily. My background includes optimizing LLM latency by 65%, developing multi-sensor fusion pipelines for robotics, and creating full-stack applications for financial analytics.
               </p>
-              <p> I am also responsible for the computer vision group at NomadZ, the robosoccer team at ETH Zurich where we teach robots to play soccer autonomously.
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:arka.mitra@alumni.ethz.ch">Email</a> &nbsp;/&nbsp;
-                  <a href="data/CV_Arka_Mitra.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=gitjk44AAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://x.com/ArkaMitra16">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/thearkamitra">Github</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/thearkamitra">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/arka_mitra.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/arka_mitra.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <hr>
-            <p style="text-align:center">
-                <a href="#tab_news">News</a> &nbsp; &nbsp; &nbsp; &nbsp;
-                <a href="#tab_publications">Publications</a> &nbsp; &nbsp; &nbsp; &nbsp;
-                <a href="#tab_posts">Blogposts</a>
+              <p>
+                Whether it's reducing query latency from 3.4s to 1.2s, building automated trading systems, or teaching robots to play soccer—I love solving complex technical challenges. I bring both theoretical depth from my ETH education and practical experience from industry roles at Microsoft, Telepathy Labs, and leading technical teams. Ready to contribute from day one with proven skills in Python, C++, PyTorch, and modern MLOps practices.
+                <span class="text-gray-500 dark:text-gray-400 text-sm italic">(Tip: There might be specialized versions of this profile floating around the internet... 🤫)</span>
               </p>
-            <hr>
-        </tbody></table>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="mailto:arka.mitra@alumni.ethz.ch" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <svg class="w-6 h-6 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+                Email
+              </a>
+              <a href="https://scholar.google.com/citations?user=gitjk44AAAAJ&hl=en" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <svg class="w-6 h-6 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                Scholar
+              </a>
+              <a href="https://x.com/ArkaMitra16" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <svg class="w-6 h-6 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                Twitter
+              </a>
+              <a href="https://github.com/thearkamitra" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <svg class="w-6 h-6 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/thearkamitra" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <svg class="w-6 h-6 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/3" data-aos="fade-left">
+            <img src="images/arka_mitra.jpg" alt="Arka Mitra" 
+                 class="w-80 h-80 object-cover rounded-full shadow-2xl mx-auto">
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-        </tbody></table>
-        <table id="tab_news" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <h2>News</h2>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <ul>
-                <li><strong> Optimizing Long-Term Player Tracking and Identification in NAO Robot Soccer by fusing Game-state and External Video</strong> was accepted in ICRA 2023.</li>
-                <li> NomadZ visisted Hamburg for <strong>GORE</strong> 2023.</li>
-                <li> Recieved grants from NCCR Automation and KIM for NomadZ.</li>
-                <li><strong>Causality Detection using Multiple Annotation Decisions</strong> was accepted to EMNLP 2022.</li>
-                <li> One of the finalists at HackZurich 2022.</li>
-                <li>NomadZ visited Bangkok for RoboCup 2022.</li>
-                <li>Helped organize <strong>Medical Imaging using Deep Learning</strong> conference 2022.</li>
-                <li>Joined the computer vision group of NomadZ.</li>
-                <li> Joined ETHZ for my masters.</li>
-                <li> Joined Microsoft India as a Data and Applied Scientist.</li>
-                <li> Graduated from IIT Kharagpur.</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        </tbody></table>
-
-          <table id="tab_publications" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Publications</h2>
-                <p>
-                  I'm interested in computer vision, deep learning, image processing and natural language processing. Some papers are listed below.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/ICRA_2023.jpg" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Optimizing Long-Term Player Tracking and Identification
-                    in NAO Robot Soccer by fusing Game-state and External Video</papertitle>
-                </strong>
-                <br>
-                Giuliano Albanese*,
-                <strong>Arka Mitra*</strong>,Jan-Nico Zaech*, Yupeng Zhao*, Ajad Chhatkuli, Luc Van Gool
-                <br>
-                <em>International Conference on Robotics and Automation</em>, 2023
-                <br>
-                <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Albanese_Optimizing_Long-Term_Robot_Tracking_With_Multi-Platform_Sensor_Fusion_WACV_2024_paper.pdf" alt="Paper not available publicly.">paper</a>
-                <p></p>
-                <p>We propose an approach for long term tracking of similar looking Nao Robots using quadratic optimization which combines the robot's internal states and video from non-calibrated camera.</td>
-            </tr>
-
+    <!-- News Section -->
+    <section id="news" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white" data-aos="fade-up">Latest News</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-blue-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-robot text-blue-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">
+                    <strong>Optimizing Long-Term Player Tracking and Identification in NAO Robot Soccer by fusing Game-state and External Video</strong> was accepted in ICRA 2023.
+                  </p>
+                </div>
+              </div>
+            </div>
             
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-green-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-plane text-green-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">NomadZ visited Hamburg for <strong>GORE</strong> 2023.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-purple-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-award text-purple-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">Received grants from NCCR Automation and KIM for NomadZ.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-blue-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-file-alt text-blue-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">
+                    <strong>Causality Detection using Multiple Annotation Decisions</strong> was accepted to EMNLP 2022.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-yellow-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-trophy text-yellow-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">One of the finalists at HackZurich 2022.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-green-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-globe text-green-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">NomadZ visited Bangkok for RoboCup 2022.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-indigo-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-stethoscope text-indigo-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">Helped organize <strong>Medical Imaging using Deep Learning</strong> conference 2022.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all border-l-4 border-red-500 hover-lift">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-users text-red-500 text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">Joined the computer vision group of NomadZ.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/ICRA_2023.jpg" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Multi-Domain Referee Datase: Enabling Recognition of Referee Signals on Robotic Platforms</papertitle>
-                </strong>
-                <br>
-                <strong>Arka Mitra*</strong>,Lukas Molnar, Jan-Nico Zaech, Yan Wu, Seonyeong Heo, Fischer Yu, Luc Van Gool
-                <br>
-                <em>RoboLetics: Workshop on Robot Learning in Athletics@ CoRL</em>, 2023
-                <br>
-                <a href="https://openreview.net/pdf?id=MGvRtjcnZA" alt="Paper not available publicly.">paper</a>
-                <p></p>
-                <p>We introduce a dataset consisting of both synthetic and real-world referee signals. Additionally we show the amount of data required to train an end-to-end model using real data if already trained on synthetic data.</td>
-            </tr>
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Publications</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            I'm interested in computer vision, deep learning, image processing and natural language processing. Some papers are listed below.
+          </p>
+        </div>
+        
+        <div class="space-y-8">
+          <!-- Publication 1 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/ICRA_2023.jpg" alt="ICRA 2023 Paper" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Optimizing Long-Term Player Tracking and Identification in NAO Robot Soccer by fusing Game-state and External Video
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  Giuliano Albanese*, <strong>Arka Mitra*</strong>, Jan-Nico Zaech*, Yupeng Zhao*, Ajad Chhatkuli, Luc Van Gool
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">International Conference on Robotics and Automation, 2023</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We propose an approach for long term tracking of similar looking Nao Robots using quadratic optimization which combines the robot's internal states and video from non-calibrated camera.
+                </p>
+                <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Albanese_Optimizing_Long-Term_Robot_Tracking_With_Multi-Platform_Sensor_Fusion_WACV_2024_paper.pdf" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <i class="fas fa-file-pdf mr-2"></i>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
 
+          <!-- Publication 2 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/Referee.png" alt="Referee Dataset" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Multi-Domain Referee Dataset: Enabling Recognition of Referee Signals on Robotic Platforms
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  <strong>Arka Mitra*</strong>, Lukas Molnar, Jan-Nico Zaech, Yan Wu, Seonyeong Heo, Fischer Yu, Luc Van Gool
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">RoboLetics: Workshop on Robot Learning in Athletics@ CoRL, 2023</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We introduce a dataset consisting of both synthetic and real-world referee signals. Additionally we show the amount of data required to train an end-to-end model using real data if already trained on synthetic data.
+                </p>
+                <a href="https://openreview.net/pdf?id=MGvRtjcnZA" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
 
+          <!-- Publication 3 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/anh_arka_emnlp.png" alt="EMNLP Paper" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Causality Detection using Multiple Annotation Decisions
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  Quynh Anh Nguyen*, <strong>Arka Mitra*</strong>
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Empirical Methods in Natural Language Processing, 2022</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We propose a loss which considers the decision from multiple different annotators for causality detection.
+                </p>
+                <a href="https://aclanthology.org/2022.case-1.11.pdf" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
 
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/ICRA_2023.jpg" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Optimizing Long-Term Player Tracking and Identification
-                    in NAO Robot Soccer by fusing Game-state and External Video</papertitle>
-                </strong>
-                <br>
-                Giuliano Albanese*,
-                <strong>Arka Mitra*</strong>,Jan-Nico Zaech*, Yupeng Zhao*, Ajad Chhatkuli, Luc Van Gool
-                <br>
-                <em>International Conference on Robotics and Automation</em>, 2023
-                <br>
-                <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Albanese_Optimizing_Long-Term_Robot_Tracking_With_Multi-Platform_Sensor_Fusion_WACV_2024_paper.pdf" alt="Paper not available publicly.">paper</a>
-                <p></p>
-                <p>We propose an approach for long term tracking of similar looking Nao Robots using quadratic optimization which combines the robot's internal states and video from non-calibrated camera.</td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
+          <!-- Publication 4 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/fire_hasoc.png" alt="Hate Speech Detection" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Multilingual Hate Speech and Offensive Content Detection using Modified Cross-entropy Loss
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  <strong>Arka Mitra*</strong>, Priyanshu Sankhala*
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Forum for Information Retrieval, 2021</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We create a model for hate speech and offensive content detection in multiple languages.
+                </p>
+                <a href="https://arxiv.org/pdf/2202.02635.pdf" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
 
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/anh_arka_emnlp.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Causality Detection using Multiple Annotation Decisions</papertitle>
-                </strong>
-                <br>
-                Quynh Anh Nguyen*,
-                <strong>Arka Mitra*</strong>
-                <br>
-                <em>Empirical Methods in Natural Language Processing </em>, 2022
-                <br>
-                <a href="https://aclanthology.org/2022.case-1.11.pdf">paper</a> <br>
-                <p></p>
-                <p>We propose a loss which considers the decision from multiple different annotators for causality detection.</p>
-              </td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Multilingual Hate Speech and Offensive Content Detection using Modified Cross-entropy Loss</papertitle>
-                </strong>
-                <br>
-                <strong>Arka Mitra*</strong>,
-                Priyanshu Sankhala*,
-                <br>
-                <em>Forum for Information Retrieval</em>, 2021
-                <br>
-                <a href="https://arxiv.org/pdf/2202.02635.pdf">paper</a> <br>
-                <p></p>
-                <p> We create a model for hate speech and offensive content detection in multiple languages.</p>
-              </td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/Samira_paper.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Quantum-Inspired Interpretable AI-Empowered Decision Support System for Detection of Early-Stage Rheumatoid Arthritis in Primary Care</papertitle>
-                </strong>
-                <br>
-                Samira Abbasgholizadeh Rahimi, Mojtaba Kolahdoozi
-  ,<strong>Arka Mitra,</strong>  Jose L. Salmeron ,
-  Amir Mohammad Navali 
-  , Alireza Sadeghpour, Seyed Amir Mir Mohammadi 
-                <br>
-                <em>Mathematics Journal</em>, 2022
-                <br>
-                <a href="https://www.mdpi.com/2227-7390/10/3/496/pdf">paper</a> <br>
-                <p></p>
-                <p>We detect early-stage Rheumatoid Arthritis using meta-heuristic search, combinig it with fuzzy logic to provide explainable feture importance.</p>
-              </td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/automated_covid.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Automated COVID-19 Detection from CT Images Using Deep Learning</papertitle>
-                </strong>
-                <br>
-                Abdulhamit Subasi,
-                <strong>Arka Mitra</strong>,Fatih Ozyurt, Turker Tuncer
-                <br>
-                <em>Book Chapter in Computer-aided Design and Diagnosis Methods for Biomedical Applications</em>, 2021
-                <br>
-                <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003121152-7/automated-covid-19-detection-ct-images-using-deep-learning-abdulhamit-subasi-arka-mitra-fatih-ozyurt-turker-tuncer">paper</a> <br>
-                <p></p>
-                <p>We show a comparison of classical and deep learning based methods for detecting COVID-19 from CT images.</p>
-              </td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/drone.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Drone vs. Bird Detection: Deep Learning Algorithms and Results from a Grand Challenge</papertitle>
-                </strong>
-                <br>
-                Angelo Coluccia, Alessio Fascista, Arne Schumann,Lars Sommer,Anastasios Dimou, Dimitrios Zarpalas ,Miguel Méndez,David de la Iglesia ,Iago González ,Jean-Philippe Mercier ,Guillaume Gagné ,<strong>Arka Mitra,</strong> Shobha Rajashekar
-                <br>
-                <em>Sensors Journal</em>, 2021
-                <br>
-                <a href="https://www.mdpi.com/1424-8220/21/8/2824/htm">paper</a>
-                <p></p>
-                <p>We evaluated different deep learning models and techniques for tracking drones in videos. It was done as a part of my internship at Honeywell.</p>
-              </td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/chemistry_cnn.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Determination of stable structure of a cluster using convolutional neural network and particle swarm optimization</papertitle>
-                </strong>
-                <br>
-                <strong>Arka Mitra</strong>,
-                Gourhari Jana,
-                Ranita Pal,
-                Pratiksha Gaikwad,
-                Shamil Sural,
-                Pratim Kumar Chattaraj
-                <br>
-                <em>Theoretical Chemistry Accounts</em>, 2021
-                <br>
-                <a href="https://link.springer.com/article/10.1007/s00214-021-02726-z">paper</a>
-                <p></p>
-                <p>We combine machine learning methods with meta-heuristic optimization to speed up the convergence of stable cluster structures.</p>
-              </td>
-            </tr>
-  
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/iit_kgp.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>IIT kgp at FinCausal 2020, Shared Task 1: Causality Detection using
-  Sentence Embeddings in Financial Reports</papertitle>
-                </strong>
-                <br>
-                <strong>Arka Mitra*</strong>,
-                Harshvardhan Srivastava*,
-                Yugam Tiwari*
-                <br>
-                <em>COLING: International Conference on Computational Linguistics</em>, 2020
-                <br>
-                <a href="https://aclanthology.org/2020.fnp-1.16/">paper</a>
-                <p></p>
-                <p>We demonstrate that embeddings from large language models can be used to detect causality in a sentence. Additionally, we show that models trained on next sentence prediction are better in prediciting causality.</p>
-              </td>
-            </tr>
+          <!-- Publication 5 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/Samira_paper.png" alt="Rheumatoid Arthritis Detection" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Quantum-Inspired Interpretable AI-Empowered Decision Support System for Detection of Early-Stage Rheumatoid Arthritis in Primary Care
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  Samira Abbasgholizadeh Rahimi, Mojtaba Kolahdoozi, <strong>Arka Mitra</strong>, Jose L. Salmeron, Amir Mohammad Navali, Alireza Sadeghpour, Seyed Amir Mir Mohammadi
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Mathematics Journal, 2022</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We detect early-stage Rheumatoid Arthritis using meta-heuristic search, combining it with fuzzy logic to provide explainable feature importance.
+                </p>
+                <a href="https://www.mdpi.com/2227-7390/10/3/496/pdf" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 6 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="500">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/automated_covid.png" alt="COVID Detection" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Automated COVID-19 Detection from CT Images Using Deep Learning
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  Abdulhamit Subasi, <strong>Arka Mitra</strong>, Fatih Ozyurt, Turker Tuncer
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Book Chapter in Computer-aided Design and Diagnosis Methods for Biomedical Applications, 2021</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We show a comparison of classical and deep learning based methods for detecting COVID-19 from CT images.
+                </p>
+                <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003121152-7/automated-covid-19-detection-ct-images-using-deep-learning-abdulhamit-subasi-arka-mitra-fatih-ozyurt-turker-tuncer" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 7 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="600">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/drone.png" alt="Drone Detection" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Drone vs. Bird Detection: Deep Learning Algorithms and Results from a Grand Challenge
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  Angelo Coluccia, Alessio Fascista, Arne Schumann, Lars Sommer, Anastasios Dimou, Dimitrios Zarpalas, Miguel Méndez, David de la Iglesia, Iago González, Jean-Philippe Mercier, Guillaume Gagné, <strong>Arka Mitra</strong>, Shobha Rajashekar
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Sensors Journal, 2021</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We evaluated different deep learning models and techniques for tracking drones in videos. It was done as a part of my internship at Honeywell.
+                </p>
+                <a href="https://www.mdpi.com/1424-8220/21/8/2824/htm" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 8 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="700">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/chemistry_cnn.png" alt="Chemistry CNN" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Determination of stable structure of a cluster using convolutional neural network and particle swarm optimization
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  <strong>Arka Mitra</strong>, Gourhari Jana, Ranita Pal, Pratiksha Gaikwad, Shamil Sural, Pratim Kumar Chattaraj
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Theoretical Chemistry Accounts, 2021</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We combine machine learning methods with meta-heuristic optimization to speed up the convergence of stable cluster structures.
+                </p>
+                <a href="https://link.springer.com/article/10.1007/s00214-021-02726-z" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 9 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="800">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/iit_kgp.png" alt="IIT KGP" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  IIT kgp at FinCausal 2020, Shared Task 1: Causality Detection using Sentence Embeddings in Financial Reports
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  <strong>Arka Mitra*</strong>, Harshvardhan Srivastava*, Yugam Tiwari*
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">COLING: International Conference on Computational Linguistics, 2020</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We demonstrate that embeddings from large language models can be used to detect causality in a sentence. Additionally, we show that models trained on next sentence prediction are better in predicting causality.
+                </p>
+                <a href="https://aclanthology.org/2020.fnp-1.16/" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 10 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="900">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/xray.png" alt="X-ray Analysis" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  A Systematic Search over Deep Convolutional Neural Network Architectures for Screening Chest Radiographs
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  <strong>Arka Mitra*</strong>, Arunava Chakravarty*, Nirmalya Ghosh, Tandra Sarkar, Ramanathan Sethuraman, Debdoot Sheet
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">EMBC: IEEE Engineering in Medicine and Biology Conference, 2020</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We explain the predictions of deep learning models on chest x-rays. The results were validated by a radiologist.
+                </p>
+                <a href="https://ieeexplore.ieee.org/document/9175246" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 11 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="1000">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/Chemistry_flat.png" alt="Chemistry Flat" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Integrating firefly algorithm with density functional theory for global optimization of Al42− clusters
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  <strong>Arka Mitra</strong>, Gourhari Jana, Prachi Agarwal, Shamil Sural, Pratim Kumar Chattaraj
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Theoretical Chemistry Accounts, 2019</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We incorporate domain knowledge into meta-heuristic algorithms to improve the convergence of the algorithms.
+                </p>
+                <a href="https://link.springer.com/article/10.1007/s00214-020-2550-y" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publication 12 -->
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="1100">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-1/4 flex-shrink-0">
+                <img src="images/Chem_carbon.png" alt="Carbon Chemistry" 
+                     class="w-full h-32 md:h-24 object-cover rounded-lg shadow-md">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Modified Particle Swarm Optimization Algorithm for Global Optimization of Carbon Clusters
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                  Gourhari Jana, <strong>Arka Mitra</strong>, Sudip Pan, Shamik Sural, Pratim Kumar Chattaraj
+                </p>
+                <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">Frontiers In Chemistry, 2019</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  We find the most stable structures of carbon clusters using a meta-heuristic algorithm in combination with Gaussian07 software.
+                </p>
+                <a href="https://www.frontiersin.org/articles/10.3389/fchem.2019.00485/full" 
+                   target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12" data-aos="fade-up">
+          <a href="https://scholar.google.com/citations?user=gitjk44AAAAJ&hl=en" target="_blank"
+             class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+            View All Publications on Google Scholar
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Projects & Blog</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            A collection of research projects and technical insights I've been working on.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Project -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover-lift hover:shadow-xl transition-all" data-aos="fade-up">
+            <img src="images/business-office-desk-work-mac-computer-technology-paper-notebook-thumbnail.jpg" 
+                 alt="Untangling ML Blog" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Untangling ML</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                I keep track of some of the machine learning papers and provide insights on latest research developments.
+              </p>
+              <a href="https://sites.google.com/view/untanglingml/home" target="_blank" 
+                 class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors font-medium">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Visit Blog
+              </a>
+            </div>
+          </div>
+
+          <!-- NomadZ Computer Vision -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+              <div class="text-center text-white">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <h4 class="font-bold">NomadZ</h4>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Robot Soccer Computer Vision</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                Leading computer vision efforts for NomadZ robosoccer team at ETH Zurich, teaching robots to play soccer autonomously.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Computer Vision</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Robotics</span>
+                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Deep Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Projects -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+              <div class="text-center text-white">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <h4 class="font-bold">Research</h4>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">ML Research Projects</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                Various research projects in computer vision, NLP, and deep learning including causality detection, medical imaging, and optimization algorithms.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">NLP</span>
+                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Medical AI</span>
+                <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Skills & Expertise</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Programming Languages -->
+          <div class="text-center" data-aos="fade-up">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-code text-blue-600 dark:text-blue-400 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4 dark:text-white">Programming</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 justify-center">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">C++</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">MATLAB</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">SQL</span>
+            </div>
+          </div>
+
+          <!-- ML/AI -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-brain text-green-600 dark:text-green-400 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4 dark:text-white">ML/AI</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 justify-center">
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">PyTorch</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">NLP</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Deep Learning</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-tools text-purple-600 dark:text-purple-400 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4 dark:text-white">Tools & Platforms</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 justify-center">
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Git</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Docker</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">AWS</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Linux</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Jupyter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <div data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-8">Let's Connect</h2>
+          <p class="text-xl mb-12 max-w-2xl mx-auto">
+            I'm always open to discussing new opportunities, research collaborations, or interesting projects in machine learning and computer vision.
+          </p>
           
+          <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+            <a href="mailto:arka.mitra@alumni.ethz.ch" 
+               class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              Send Email
+            </a>
+            <a href="https://www.linkedin.com/in/thearkamitra" target="_blank"
+               class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="flex justify-center space-x-6">
+            <a href="https://scholar.google.com/citations?user=gitjk44AAAAJ&hl=en" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/ArkaMitra16" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/thearkamitra" target="_blank" class="text-white hover:text-blue-200 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-8 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-400 dark:text-gray-500">
+          © 2025 Arka Mitra. Built with ❤️ using Tailwind CSS. 
+          <a href="https://github.com/jonbarron/website" target="_blank" class="text-blue-400 dark:text-blue-300 hover:text-blue-300 dark:hover:text-blue-200">Template inspired by Jon Barron</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Dark Mode Functionality
+      function initDarkMode() {
+        // Check for saved dark mode preference or default to system preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        
+        if (isDarkMode) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+
+      function toggleDarkMode() {
+        const isDark = document.documentElement.classList.contains('dark');
+        
+        if (isDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('darkMode', 'false');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('darkMode', 'true');
+        }
+      }
+
+      // Initialize dark mode on page load
+      initDarkMode();
+
+      // Add event listeners for dark mode toggles
+      document.addEventListener('DOMContentLoaded', function() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
+        
+        if (darkModeToggle) {
+          darkModeToggle.addEventListener('click', toggleDarkMode);
+        }
+        
+        if (darkModeToggleMobile) {
+          darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+        }
+      });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 600,
+      once: true,
+      offset: 80
+    });
+
+    // Optimized scroll progress indicator
+    let ticking = false;
+    function updateScrollProgress() {
+      const scrollProgress = document.getElementById('scroll-progress');
+      const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      scrollProgress.style.width = scrolled + '%';
+      ticking = false;
+    }
+
+    // Optimized scroll-triggered animations
+    function handleScrollAnimations() {
+      const scrollReveals = document.querySelectorAll('.scroll-reveal');
+      scrollReveals.forEach((element, index) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.8;
+        
+        if (isVisible && !element.classList.contains('revealed')) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+          element.style.transitionDelay = (index * 0.1) + 's';
+          element.classList.add('revealed');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateScrollProgress();
+          handleScrollAnimations();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      handleScrollAnimations();
+    });      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('hidden');
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const navHeight = 80; // Account for fixed nav
+            const targetPosition = target.offsetTop - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
             
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/xray.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>A Systematic Search over Deep Convolutional Neural Network
-                    Architectures for Screening Chest Radiographs</papertitle>
-                </strong>
-                <br>
-                <strong>Arka Mitra*</strong>, Arunava Chakravarty*
-                , Nirmalya Ghosh
-                , Tandra Sarkar
-                ,
-                Ramanathan Sethuraman
-                , Debdoot Sheet
-                <br>
-                <em>EMBC: IEEE Engineering in Medicine and Biology Conference</em>, 2020
-                <br>
-                <a href="https://ieeexplore.ieee.org/document/9175246">paper</a>
-                <p></p>
-                <p>We explain the predictions of deep learning models on chest xrays. The results were validated by a radiologist.</p>
-              </td>
-            </tr>
-  
-            <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img style="width:100%;max-width:100%" alt="teaser image" src="images/Chemistry_flat.png" class="hoverZoomLink">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>
-                  <papertitle>Integrating firefly algorithm with density functional theory for global optimization of Al42− clusters</papertitle>
-                </strong>
-                <br>
-                <strong>Arka Mitra</strong>,
-                Gourhari Jana,
-                Prachi Agarwal,
-                Shamil Sural,
-                Pratim Kumar Chattaraj
-                <br>
-                <em>Theoretical Chemistry Accounts</em>, 2019
-                <br>
-                <a href="https://link.springer.com/article/10.1007/s00214-020-2550-y">paper</a> <br>
-                <p></p>
-                <p>We incorporate domain knowledge into meta-heuristic algorithms to improve the convergence of the algorithms.</p>
-              </td>
-            </tr>
-          </tbody>
-        
-  
-          <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img style="width:100%;max-width:100%" alt="teaser image" src="images/Chem_carbon.png" class="hoverZoomLink">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <strong>
-                <papertitle></papertitle>
-              </strong>
-              <br>
-              Gourhari Jana,
-              <strong>Arka Mitra</strong>,
-              Sudip Pan,
-              Shamik Sural,
-              Pratim Kumar Chattaraj
-              <br>
-              <em>Frontiers In Chemistry</em>, 2019
-              <br>
-              <a href="https://www.frontiersin.org/articles/10.3389/fchem.2019.00485/full">paper</a>
-              <p></p>
-              <p>We find the most stable structures of carbon clusters using a meta-heuristic algorithm in combination with Gaussian07 software.</p> 
-              </td>
-          </tr>
-  
-        
-        </table>
-  
-        <table id="tab_posts" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <h2>Blogposts</h2>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" bgcolor="#ffffff">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img style="width:100%;max-width:100%" alt="teaser image" src="images/business-office-desk-work-mac-computer-technology-paper-notebook-thumbnail.jpg" class="hoverZoomLink">
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <strong>
-              <papertitle>Untangling ML</papertitle>
-            </strong>
-            <br>
-            <a href="https://sites.google.com/view/untanglingml/home">Blog Website</a> <br>
-            <p></p>
-            <p>I keep track of some of the machine learning papers.</p>
-          </td>
-        </tr>
-      </tbody></table>
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        });
+      });
 
-
-      <a href="https://github.com/jonbarron/website">Link to Template</a>
-
+      // Add active class to navigation links based on scroll position
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
         
-        </td>
-      </tr>
-    </table>
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('text-blue-600', 'dark:text-blue-400');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('text-blue-600', 'dark:text-blue-400');
+          }
+        });
+      });
+    </script>
+
   </body>
 </html>

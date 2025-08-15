@@ -1,0 +1,21 @@
+{
+    "name": "Arka Mitra - ML Engineer & Software Developer",
+    "short_name": "Arka Mitra",
+    "description": "ETH Zürich graduate with Swiss B permit. Experienced in NLP, Computer Vision, and Software Engineering.",
+    "icons": [
+        {
+            "src": "images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#667eea",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
