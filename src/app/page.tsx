@@ -198,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section: Re-added with Reactive Highlights */}
+      {/* About Section */}
       <section id="about" className="py-24 border-t border-gray-100 dark:border-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -249,7 +249,7 @@ export default function Home() {
                   src="/images/arka_mitra.jpg" 
                   alt={personalInfo.name} 
                   fill 
-                  className="object-cover rounded-[40px] shadow-2xl z-10 grayscale hover:grayscale-0 transition-all duration-700"
+                  className="object-cover rounded-[40px] shadow-2xl z-10 transition-all duration-700"
                 />
               </div>
             </motion.div>
@@ -257,7 +257,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* News Section: Re-added as Reactive Live Feed */}
+      {/* News Section */}
       <section id="news" className="py-24 bg-gray-100 dark:bg-gray-900/40">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -324,7 +324,7 @@ export default function Home() {
                 <Cpu size={18} /> Research Repository
               </div>
               <h2 className="text-5xl font-black mb-6 tracking-tight">Technical Output</h2>
-              <p className="text-gray-600 dark:text-gray-400 font-medium">
+              <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed text-lg">
                 Filtering through {publications.length} peer-reviewed works across major venues like ICRA and EMNLP.
               </p>
             </div>
@@ -405,7 +405,7 @@ export default function Home() {
                     <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed mb-6 font-medium">
                       {pub.description}
                     </p>
-                    <div className="text-[10px] text-gray-400 font-mono mt-auto border-t border-gray-100 dark:border-gray-800 pt-4">
+                    <div className="text-[10px] text-gray-400 font-mono mt-auto border-t border-gray-100 dark:border-gray-800 pt-4 uppercase">
                       AUTHORS: {pub.authors}
                     </div>
                   </div>
