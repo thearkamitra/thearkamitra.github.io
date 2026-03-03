@@ -20,7 +20,10 @@ import {
   X,
   FileText,
   Terminal,
-  Server
+  Server,
+  Activity,
+  Zap,
+  ChevronRight
 } from 'lucide-react'
 import { personalInfo, news, publications, projects, skills } from '@/data/portfolio'
 
@@ -81,27 +84,34 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
   const [isMounted, setIsMounted] = useState(false)
+  const [activeNewsCategory, setActiveNewsCategory] = useState<string | null>(null)
 
   useEffect(() => {
     setIsMounted(true)
   }, [])
 
-  // Dynamic filter logic
+  // Dynamic filter logic for publications
   const filteredPublications = useMemo(() => {
     return publications.filter(pub => {
       const matchesSearch = pub.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             pub.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                             pub.authors.toLowerCase().includes(searchQuery.toLowerCase())
       
-      const tags = pub.venue.toLowerCase() // Simple tag extraction from venue
+      const tags = pub.venue.toLowerCase()
       const matchesTag = !selectedTag || tags.includes(selectedTag.toLowerCase())
       
       return matchesSearch && matchesTag
     })
   }, [searchQuery, selectedTag])
 
-  // Extract common venues/tags for filtering
+  // Filter logic for news
+  const filteredNews = useMemo(() => {
+    if (!activeNewsCategory) return news;
+    return news.filter(item => item.type === activeNewsCategory);
+  }, [activeNewsCategory]);
+
   const allTags = ['ICRA', 'EMNLP', 'CoRL', 'Mathematics', 'Sensors', 'FinCausal', 'Chemistry', 'IEEE']
+  const newsCategories = Array.from(new Set(news.map(item => item.type)));
 
   if (!isMounted) return null
 
@@ -136,7 +146,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero: Higher Reactivity with Dynamic Text */}
+      {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.div
@@ -186,14 +196,127 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        
-        {/* Background Decorative Elements */}
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
       </section>
 
-      {/* Publications: Highly Reactive Search & Filter */}
-      <section id="publications" className="py-24 bg-white dark:bg-gray-900/30">
+      {/* About Section: Re-added with Reactive Highlights */}
+      <section id="about" className="py-24 border-t border-gray-100 dark:border-gray-900">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
+            >
+              <div className="flex items-center gap-2 mb-6 text-blue-600 font-bold uppercase tracking-[0.3em] text-xs">
+                <Activity size={18} /> Profile Overview
+              </div>
+              <h2 className="text-5xl font-black mb-8 tracking-tight">Intelligence at scale.</h2>
+              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
+                <p>
+                  {personalInfo.about}
+                </p>
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  {[
+                    { label: 'Latency Optimization', value: '65%', icon: <Zap size={16} /> },
+                    { label: 'Robot Vision Sync', value: '23ms', icon: <Cpu size={16} /> },
+                  ].map((stat, i) => (
+                    <motion.div 
+                      key={i}
+                      whileHover={{ y: -5 }}
+                      className="glass-effect p-4 rounded-2xl border border-blue-500/10"
+                    >
+                      <div className="flex items-center gap-2 text-blue-600 font-black mb-1">
+                        {stat.icon} {stat.value}
+                      </div>
+                      <div className="text-[10px] uppercase font-black text-gray-500 tracking-wider">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2 relative"
+            >
+              <div className="relative w-full aspect-square max-w-md mx-auto group">
+                <div className="absolute inset-0 bg-blue-600 rounded-[40px] rotate-6 group-hover:rotate-3 transition-transform duration-700 opacity-10"></div>
+                <div className="absolute inset-0 bg-purple-600 rounded-[40px] -rotate-6 group-hover:-rotate-3 transition-transform duration-700 opacity-10"></div>
+                <Image 
+                  src="/images/arka_mitra.jpg" 
+                  alt={personalInfo.name} 
+                  fill 
+                  className="object-cover rounded-[40px] shadow-2xl z-10 grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* News Section: Re-added as Reactive Live Feed */}
+      <section id="news" className="py-24 bg-gray-100 dark:bg-gray-900/40">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+              Live Feed
+            </div>
+            <h2 className="text-5xl font-black tracking-tight">Achievements</h2>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <Tag 
+              text="ALL_NEWS" 
+              active={activeNewsCategory === null} 
+              onClick={() => setActiveNewsCategory(null)} 
+            />
+            {newsCategories.map(cat => (
+              <Tag 
+                key={cat} 
+                text={cat.toUpperCase()} 
+                active={activeNewsCategory === cat} 
+                onClick={() => setActiveNewsCategory(cat)} 
+              />
+            ))}
+          </div>
+
+          <div className="space-y-4 relative">
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 hidden md:block" />
+            <AnimatePresence mode='popLayout'>
+              {filteredNews.map((item, index) => (
+                <motion.div 
+                  key={item.content}
+                  layout
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="glass-effect p-6 rounded-3xl flex items-start gap-6 relative z-10 group hover:border-blue-500/30 transition-colors"
+                >
+                  <div className="hidden md:flex flex-shrink-0 w-16 text-[10px] font-black text-gray-400 dark:text-gray-600 uppercase tracking-widest pt-2">
+                    {item.date}
+                  </div>
+                  <div className="flex-shrink-0 bg-blue-600/10 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                    {item.type === 'award' ? <Trophy size={20} /> : <Zap size={20} />}
+                  </div>
+                  <div className="flex-grow">
+                    <div className="md:hidden text-[10px] font-black text-blue-600 mb-1">{item.date}</div>
+                    <p className="text-gray-800 dark:text-gray-200 font-bold leading-relaxed">
+                      {item.content}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications Section */}
+      <section id="publications" className="py-24">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
             <div className="max-w-xl">
@@ -206,7 +329,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Reactive Search Bar */}
             <div className="w-full lg:w-96">
               <div className="relative group">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={20} />
@@ -229,7 +351,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tag Filter Cloud */}
           <div className="flex flex-wrap gap-2 mb-12">
             <Tag 
               text="ALL_ARCHIVES" 
@@ -305,7 +426,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expertise: Senior Engineer Focus */}
+      {/* Expertise Section */}
       <section id="skills" className="py-32 bg-gray-900 text-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -338,7 +459,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Decorative Visual for "Engineer" vibe */}
             <div className="hidden lg:block relative">
               <div className="absolute inset-0 bg-blue-600/20 blur-[100px] rounded-full" />
               <div className="relative glass-effect p-1 bg-white/5 rounded-[40px] border border-white/10 overflow-hidden shadow-2xl">
