@@ -1,0 +1,45 @@
+{
+  "name": "thearkamitra.github.io",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This is the source code to Jon Barron's public academic website: https://jonbarron.info/. Feel free to clone this code for your own personal use.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thearkamitra/thearkamitra.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thearkamitra/thearkamitra.github.io/issues"
+  },
+  "homepage": "https://github.com/thearkamitra/thearkamitra.github.io#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.27",
+    "clsx": "^2.1.1",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6",
+    "framer-motion": "^12.34.5",
+    "lucide-react": "^0.576.0",
+    "postcss": "^8.5.8",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  }
+}
