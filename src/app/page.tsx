@@ -110,13 +110,15 @@ export default function Home() {
     return news.filter(item => item.type === activeNewsCategory);
   }, [activeNewsCategory]);
 
-  const allTags = ['ICRA', 'EMNLP', 'CoRL', 'Mathematics', 'Sensors', 'FinCausal', 'Chemistry', 'IEEE']
+  const allTags = ['ICRA', 'EMNLP', 'CoRL', 'Mathematics', 'Sensors', 'CoLING', 'Chemistry', 'IEEE']
   const newsCategories = Array.from(new Set(news.map(item => item.type)));
 
   if (!isMounted) return null
 
   return (
-    <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+    <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-black dark:bg-dot-grid text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+    {/* <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-500"> */}
       <ScrollProgressBar />
       
       {/* Dynamic Navigation */}
@@ -212,7 +214,7 @@ export default function Home() {
                 <Activity size={18} /> Profile Overview
               </div>
               <h2 className="text-5xl font-black mb-8 tracking-tight">Intelligence at scale.</h2>
-              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
+              <div className="text-center space-y-6 text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
                 <p>
                   {personalInfo.about}
                 </p>
@@ -499,10 +501,7 @@ export default function Home() {
           <a href={personalInfo.socials.twitter} target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors"><Twitter size={24} /></a>
           <a href={`mailto:${personalInfo.email}`} className="text-gray-400 hover:text-blue-600 transition-colors"><Mail size={24} /></a>
         </motion.div>
-        <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">© 2026 {personalInfo.name}</p>
-        <div className="text-[10px] text-gray-400 mt-4 font-mono uppercase opacity-50">
-          NODE_ENV: PRODUCTION // V_ARCHITECTURE: NEXT_GEN_APP_ROUTER
-        </div>
+        <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">© 2025 {personalInfo.name}</p>
       </footer>
     </main>
   )

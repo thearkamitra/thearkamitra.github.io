@@ -18,6 +18,45 @@ export const personalInfo = {
 
 export const news = [
   {
+    date: "2025",
+    content: "One of the finalists at Swiss AI Hackathon 2025.",
+    type: "award"
+  },
+  {
+    date: "2024",
+    content: "Joined Telepathy Labs as a Research Engineer, working on optimizing LLM latency and building production-grade systems.",
+    type: "event"
+  },
+  { date: "2024",
+    content: "Won third place at event organized by Graduate Consulting Club of ETH Zurich.",
+    type: "award"    
+  },
+  {
+    date: "2024",
+    content: "Won second place at Datathon 2024 by ETH Zurich.",
+    type: "award"
+  },
+  {
+    date: "2024",
+    content: "NomadZ exhibited at United Nations AI for Good Global Summit 2024.",
+    type: "event"
+  },
+  {
+    date: "2024",
+    content: "Joined Dr. Blumer and Partners as a Quantitative Analyst.",
+    type: "event"
+  },
+  {
+    date: "2023",
+    content: "Graduated from ETH Zurich with a Master's in Information Technology and Electrical Engineering.",
+    type: "event"
+  },
+  {
+    date: "2023",
+    content: "Multi-Domain Referee Dataset: Enabling Recognition of Referee Signals on Robotic Platforms was accepted in CoRL 2023.",
+    type: "robotics"
+  },
+  {
     date: "2023",
     content: "Optimizing Long-Term Player Tracking and Identification in NAO Robot Soccer by fusing Game-state and External Video was accepted in ICRA 2023.",
     type: "robotics"
@@ -56,14 +95,29 @@ export const news = [
     date: "2022",
     content: "Joined the computer vision group of NomadZ.",
     type: "event"
-  }
+  },
+  {
+    date: "2021",
+    content: "Started Masters at ETH Zurich.",
+    type: "event"
+  },
+  {
+    date: "2021",
+    content: "Applied and Data Scientist employee at Microsoft.",
+    type: "event"
+  },
+  {
+    date: "2021",
+    content: "Finished my Bachelor's from IIT Kharagpur with a Major in Electronics and Electrical Communication Engineering and Minor in Computer Science.",
+    type: "event"
+  },
 ];
 
 export const publications = [
   {
     title: "Optimizing Long-Term Player Tracking and Identification in NAO Robot Soccer by fusing Game-state and External Video",
     authors: "Giuliano Albanese*, Arka Mitra*, Jan-Nico Zaech*, Yupeng Zhao*, Ajad Chhatkuli, Luc Van Gool",
-    venue: "International Conference on Robotics and Automation, 2023",
+    venue: "International Conference on Robotics and Automation (ICRA), 2023",
     description: "We propose an approach for long term tracking of similar looking Nao Robots using quadratic optimization which combines the robot's internal states and video from non-calibrated camera.",
     image: "/images/ICRA_2023.jpg",
     link: "https://openaccess.thecvf.com/content/WACV2024/papers/Albanese_Optimizing_Long-Term_Robot_Tracking_With_Multi-Platform_Sensor_Fusion_WACV_2024_paper.pdf"
@@ -79,7 +133,7 @@ export const publications = [
   {
     title: "Causality Detection using Multiple Annotation Decisions",
     authors: "Quynh Anh Nguyen*, Arka Mitra*",
-    venue: "Empirical Methods in Natural Language Processing, 2022",
+    venue: "Empirical Methods in Natural Language Processing (EMNLP), 2022",
     description: "We propose a loss which considers the decision from multiple different annotators for causality detection.",
     image: "/images/anh_arka_emnlp.png",
     link: "https://aclanthology.org/2022.case-1.11.pdf"
@@ -175,7 +229,9 @@ export const projects = [
 ];
 
 export const skills = {
-  programming: ["Python", "C++", "MATLAB", "JavaScript", "SQL"],
-  ml: ["PyTorch", "TensorFlow", "Computer Vision", "NLP", "Deep Learning"],
-  tools: ["Git", "Docker", "AWS", "Linux", "Jupyter"]
+  Programming: ["Python", "C++", "TypeScript"],
+  Libraries: ["PyTorch", "TensorFlow", "scikit-learn", "OpenCV", "spaCy"],
+  DevOps: ["Git", "Docker", "CI/CD", "Linux", "GitHub Actions", "DVC"],
+  "Machine Learning": ["LLMs", "Computer Vision", "NLP", "Meta-heuristic Optimization", "Explainable AI"],
+  Databases: ["MySQL", "PostgreSQL", "MongoDB", "Redis"]
 };
