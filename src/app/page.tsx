@@ -152,7 +152,7 @@ export default function Home() {
   if (!isMounted) return null
 
   return (
-    <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-[#02040a] dark:bg-dot-grid text-gray-900 dark:text-slate-100 transition-colors duration-500">
+    <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-[#02040a] text-gray-900 dark:text-slate-100 transition-colors duration-500">
       <ScrollProgressBar />
       
       {/* Dynamic Navigation */}
@@ -162,9 +162,9 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent flex items-center gap-2"
+              className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-300 bg-clip-text text-transparent flex items-center gap-2"
             >
-              <Terminal size={20} className="text-blue-500" />
+              <Terminal size={20} className="text-blue-400" />
               {personalInfo.name}
             </motion.div>
             <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
@@ -172,7 +172,7 @@ export default function Home() {
                 <a 
                   key={item} 
                   href={`#${item}`} 
-                  className="hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors capitalize flex items-center gap-1"
+                  className="text-gray-600 hover:text-blue-200 dark:text-slate-100 dark:hover:text-blue-200 transition-colors capitalize flex items-center gap-1"
                 >
                   {item}
                 </a>
@@ -208,12 +208,12 @@ export default function Home() {
             </motion.div>
             
             <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
-              <span className="block opacity-90">Building the</span>
-              <span className="bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Cognitive Future</span>
+              <span className="block dark:text-white text-gray-900 ">Building the</span>
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Cognitive Future</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-slate-300 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-              Research Engineer specializing in <span className="text-gray-900 dark:text-white font-bold border-b-2 border-blue-500/20">Computer Vision</span>, <span className="text-gray-900 dark:text-white font-bold border-b-2 border-indigo-500/20">NLP</span>, and <span className="text-gray-900 dark:text-white font-bold border-b-2 border-purple-500/20">Autonomous Systems</span>. 
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-slate-200 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+              Research Engineer specializing in <span className="text-gray-900 dark:text-blue-300 font-bold border-b-2 border-blue-500/30">Computer Vision</span>, <span className="text-gray-900 dark:text-purple-300 font-bold border-b-2 border-purple-500/30">NLP</span>, and <span className="text-gray-900 dark:text-indigo-300 font-bold border-b-2 border-indigo-500/30">Autonomous Systems</span>. 
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-6 mb-24">
@@ -230,7 +230,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 href={`mailto:${personalInfo.email}`} 
-                className="glass-effect px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-3 group dark:text-white"
+                className="glass-effect px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-3 group dark:text-white dark:bg-white/5 dark:hover:bg-white/10"
               >
                 INITIALIZE CONTACT <Mail size={20} className="group-hover:scale-110 transition-transform" />
               </motion.a>
