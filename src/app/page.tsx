@@ -116,9 +116,7 @@ export default function Home() {
   if (!isMounted) return null
 
   return (
-    <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-black dark:bg-dot-grid text-gray-900 dark:text-gray-100 transition-colors duration-500">
-
-    {/* <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-500"> */}
+    <main className="min-h-screen hero-gradient bg-gray-50 dark:bg-[#0a0f1e] dark:bg-dot-grid text-gray-900 dark:text-slate-200 transition-colors duration-500">
       <ScrollProgressBar />
       
       {/* Dynamic Navigation */}
@@ -128,7 +126,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-2"
+              className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent flex items-center gap-2"
             >
               <Terminal size={20} className="text-blue-600" />
               {personalInfo.name}
@@ -138,7 +136,7 @@ export default function Home() {
                 <a 
                   key={item} 
                   href={`#${item}`} 
-                  className="hover:text-blue-600 transition-colors capitalize flex items-center gap-1"
+                  className="hover:text-blue-500 dark:text-slate-300 dark:hover:text-blue-400 transition-colors capitalize flex items-center gap-1"
                 >
                   {item}
                 </a>
@@ -170,11 +168,11 @@ export default function Home() {
             
             <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
               <span className="block opacity-90">Building the</span>
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Cognitive Future</span>
+              <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">Cognitive Future</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-              Research Engineer specializing in <span className="text-gray-900 dark:text-white font-bold border-b-2 border-blue-500/30">Computer Vision</span>, <span className="text-gray-900 dark:text-white font-bold border-b-2 border-purple-500/30">NLP</span>, and <span className="text-gray-900 dark:text-white font-bold border-b-2 border-indigo-500/30">Autonomous Systems</span>. 
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-slate-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+              Research Engineer specializing in <span className="text-gray-900 dark:text-white font-bold border-b-2 border-blue-500/30">Computer Vision</span>, <span className="text-gray-900 dark:text-white font-bold border-b-2 border-indigo-500/30">NLP</span>, and <span className="text-gray-900 dark:text-white font-bold border-b-2 border-purple-500/30">Autonomous Systems</span>. 
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-6 mb-24">
@@ -183,7 +181,7 @@ export default function Home() {
                 whileTap={{ scale: 0.98 }}
                 href={personalInfo.cvs.general} 
                 target="_blank" 
-                className="bg-gray-900 dark:bg-white text-white dark:text-black px-10 py-5 rounded-2xl font-black shadow-2xl transition-all flex items-center justify-center gap-3 group"
+                className="bg-gray-900 dark:bg-blue-600 text-white dark:text-white px-10 py-5 rounded-2xl font-black shadow-2xl transition-all flex items-center justify-center gap-3 group"
               >
                 ACCESS RESUME <FileText size={20} className="group-hover:rotate-12 transition-transform" />
               </motion.a>
@@ -191,7 +189,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 href={`mailto:${personalInfo.email}`} 
-                className="glass-effect px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-3 group"
+                className="glass-effect px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-3 group dark:text-white"
               >
                 INITIALIZE CONTACT <Mail size={20} className="group-hover:scale-110 transition-transform" />
               </motion.a>
@@ -201,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 border-t border-gray-100 dark:border-gray-900">
+      <section id="about" className="py-24 border-t border-gray-100 dark:border-blue-900/20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <motion.div 
@@ -210,11 +208,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="lg:w-1/2"
             >
-              <div className="flex items-center gap-2 mb-6 text-blue-600 font-bold uppercase tracking-[0.3em] text-xs">
+              <div className="flex items-center gap-2 mb-6 text-blue-600 dark:text-blue-400 font-bold uppercase tracking-[0.3em] text-xs">
                 <Activity size={18} /> Profile Overview
               </div>
               <h2 className="text-5xl font-black mb-8 tracking-tight">Intelligence at scale.</h2>
-              <div className="text-center space-y-6 text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
+              <div className="text-center space-y-6 text-lg text-gray-600 dark:text-slate-400 font-medium leading-relaxed">
                 <p>
                   {personalInfo.about}
                 </p>
@@ -228,10 +226,10 @@ export default function Home() {
                       whileHover={{ y: -5 }}
                       className="glass-effect p-4 rounded-2xl border border-blue-500/10"
                     >
-                      <div className="flex items-center gap-2 text-blue-600 font-black mb-1">
+                      <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black mb-1">
                         {stat.icon} {stat.value}
                       </div>
-                      <div className="text-[10px] uppercase font-black text-gray-500 tracking-wider">{stat.label}</div>
+                      <div className="text-[10px] uppercase font-black text-gray-500 dark:text-slate-500 tracking-wider">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -246,7 +244,7 @@ export default function Home() {
             >
               <div className="relative w-full aspect-square max-w-md mx-auto group">
                 <div className="absolute inset-0 bg-blue-600 rounded-[40px] rotate-6 group-hover:rotate-3 transition-transform duration-700 opacity-10"></div>
-                <div className="absolute inset-0 bg-purple-600 rounded-[40px] -rotate-6 group-hover:-rotate-3 transition-transform duration-700 opacity-10"></div>
+                <div className="absolute inset-0 bg-indigo-600 rounded-[40px] -rotate-6 group-hover:-rotate-3 transition-transform duration-700 opacity-10"></div>
                 <Image 
                   src="/images/arka_mitra.jpg" 
                   alt={personalInfo.name} 
@@ -260,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* News Section */}
-      <section id="news" className="py-24 bg-gray-100 dark:bg-gray-900/40">
+      <section id="news" className="py-24 bg-gray-100 dark:bg-slate-900/30">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
@@ -286,7 +284,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-4 relative">
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-blue-900/20 hidden md:block" />
             <AnimatePresence mode='popLayout'>
               {filteredNews.map((item, index) => (
                 <motion.div 
@@ -298,15 +296,15 @@ export default function Home() {
                   transition={{ delay: index * 0.05 }}
                   className="glass-effect p-6 rounded-3xl flex items-start gap-6 relative z-10 group hover:border-blue-500/30 transition-colors"
                 >
-                  <div className="hidden md:flex flex-shrink-0 w-16 text-[10px] font-black text-gray-400 dark:text-gray-600 uppercase tracking-widest pt-2">
+                  <div className="hidden md:flex flex-shrink-0 w-16 text-[10px] font-black text-gray-400 dark:text-slate-500 uppercase tracking-widest pt-2">
                     {item.date}
                   </div>
-                  <div className="flex-shrink-0 bg-blue-600/10 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                  <div className="flex-shrink-0 bg-blue-600/10 text-blue-600 dark:text-blue-400 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
                     {item.type === 'award' ? <Trophy size={20} /> : <Zap size={20} />}
                   </div>
                   <div className="flex-grow">
                     <div className="md:hidden text-[10px] font-black text-blue-600 mb-1">{item.date}</div>
-                    <p className="text-gray-800 dark:text-gray-200 font-bold leading-relaxed">
+                    <p className="text-gray-800 dark:text-slate-200 font-bold leading-relaxed">
                       {item.content}
                     </p>
                   </div>
@@ -322,11 +320,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
             <div className="max-w-xl">
-              <div className="flex items-center gap-2 mb-4 text-blue-600 font-bold uppercase tracking-widest text-xs">
+              <div className="flex items-center gap-2 mb-4 text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs">
                 <Cpu size={18} /> Research Repository
               </div>
               <h2 className="text-5xl font-black mb-6 tracking-tight">Technical Output</h2>
-              <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed text-lg">
+              <p className="text-gray-600 dark:text-slate-400 font-medium leading-relaxed text-lg">
                 Filtering through {publications.length} peer-reviewed works across major venues like ICRA and EMNLP.
               </p>
             </div>
@@ -339,7 +337,7 @@ export default function Home() {
                   placeholder="Query research parameters..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-transparent focus:border-blue-500 focus:outline-none transition-all font-medium text-sm"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 dark:bg-slate-900/50 border-2 border-transparent focus:border-blue-500 focus:outline-none transition-all font-medium text-sm dark:text-white"
                 />
                 {searchQuery && (
                   <button 
@@ -382,7 +380,7 @@ export default function Home() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
-                  className="glass-effect rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/10 transition-all border border-gray-100 dark:border-gray-800 flex flex-col h-full"
+                  className="glass-effect rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/10 transition-all border border-gray-100 dark:border-blue-900/20 flex flex-col h-full"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image 
@@ -391,7 +389,7 @@ export default function Home() {
                       fill 
                       className="object-cover group-hover:scale-110 group-hover:rotate-2 transition-transform duration-700" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                       <a 
                         href={pub.link} 
                         target="_blank" 
@@ -402,12 +400,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="p-8 flex-grow">
-                    <div className="text-[10px] font-black text-blue-600 mb-2 uppercase tracking-[0.2em]">{pub.venue}</div>
-                    <h3 className="text-lg font-bold mb-4 leading-tight group-hover:text-blue-600 transition-colors">{pub.title}</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed mb-6 font-medium">
+                    <div className="text-[10px] font-black text-blue-600 dark:text-blue-400 mb-2 uppercase tracking-[0.2em]">{pub.venue}</div>
+                    <h3 className="text-lg font-bold mb-4 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{pub.title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-slate-400 line-clamp-3 leading-relaxed mb-6 font-medium">
                       {pub.description}
                     </p>
-                    <div className="text-[10px] text-gray-400 font-mono mt-auto border-t border-gray-100 dark:border-gray-800 pt-4 uppercase">
+                    <div className="text-[10px] text-gray-400 dark:text-slate-500 font-mono mt-auto border-t border-gray-100 dark:border-blue-900/20 pt-4 uppercase">
                       AUTHORS: {pub.authors}
                     </div>
                   </div>
@@ -429,7 +427,7 @@ export default function Home() {
       </section>
 
       {/* Expertise Section */}
-      <section id="skills" className="py-32 bg-gray-900 text-white relative overflow-hidden">
+      <section id="skills" className="py-32 bg-slate-950 text-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
@@ -437,7 +435,7 @@ export default function Home() {
                 <Server size={18} /> System Capabilities
               </div>
               <h2 className="text-5xl font-black mb-8 tracking-tight">Technical Stack</h2>
-              <p className="text-gray-400 text-lg mb-12 leading-relaxed font-medium">
+              <p className="text-slate-400 text-lg mb-12 leading-relaxed font-medium">
                 Proven proficiency in high-performance computing, distributed systems perception, and real-time deep learning pipelines.
               </p>
               
@@ -464,7 +462,7 @@ export default function Home() {
             <div className="hidden lg:block relative">
               <div className="absolute inset-0 bg-blue-600/20 blur-[100px] rounded-full" />
               <div className="relative glass-effect p-1 bg-white/5 rounded-[40px] border border-white/10 overflow-hidden shadow-2xl">
-                <div className="bg-gray-950 rounded-[36px] p-12 aspect-square flex flex-col justify-between font-mono">
+                <div className="bg-slate-950 rounded-[36px] p-12 aspect-square flex flex-col justify-between font-mono">
                   <div className="space-y-4">
                     <div className="flex gap-2 text-green-500"><Terminal size={16} /> <span className="text-xs">SYSTEM_INITIALIZED</span></div>
                     <div className="h-1 w-full bg-blue-500/20 rounded-full overflow-hidden">
@@ -474,7 +472,7 @@ export default function Home() {
                         className="h-full w-1/3 bg-blue-500"
                       />
                     </div>
-                    <div className="text-[10px] text-gray-500 leading-relaxed uppercase">
+                    <div className="text-[10px] text-slate-500 leading-relaxed uppercase">
                       // PERCEPTION_PIPELINE.LOG<br/>
                       [OK] LIDAR_FUSION_SYNC: 23ms<br/>
                       [OK] VISION_INFERENCE_P50: 12ms<br/>
@@ -490,18 +488,21 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="py-24 text-center border-t border-gray-100 dark:border-gray-900 bg-white dark:bg-gray-950">
+      <footer className="py-24 text-center border-t border-gray-100 dark:border-blue-900/20 bg-white dark:bg-[#080a18]">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="flex justify-center gap-8 mb-12"
         >
-          <a href={personalInfo.socials.github} target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors"><Github size={24} /></a>
-          <a href={personalInfo.socials.linkedin} target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors"><Linkedin size={24} /></a>
-          <a href={personalInfo.socials.twitter} target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors"><Twitter size={24} /></a>
-          <a href={`mailto:${personalInfo.email}`} className="text-gray-400 hover:text-blue-600 transition-colors"><Mail size={24} /></a>
+          <a href={personalInfo.socials.github} target="_blank" className="text-gray-400 hover:text-blue-500 transition-colors"><Github size={24} /></a>
+          <a href={personalInfo.socials.linkedin} target="_blank" className="text-gray-400 hover:text-blue-500 transition-colors"><Linkedin size={24} /></a>
+          <a href={personalInfo.socials.twitter} target="_blank" className="text-gray-400 hover:text-blue-500 transition-colors"><Twitter size={24} /></a>
+          <a href={`mailto:${personalInfo.email}`} className="text-gray-400 hover:text-blue-500 transition-colors"><Mail size={24} /></a>
         </motion.div>
-        <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">© 2025 {personalInfo.name}</p>
+        <p className="text-gray-500 dark:text-slate-500 font-bold uppercase tracking-widest text-xs">© 2025 {personalInfo.name}</p>
+        <div className="text-[10px] text-gray-400 dark:text-slate-600 mt-4 font-mono uppercase opacity-50">
+          NODE_ENV: PRODUCTION // V_ARCHITECTURE: NEXT_GEN_APP_ROUTER
+        </div>
       </footer>
     </main>
   )
