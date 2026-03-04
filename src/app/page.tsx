@@ -207,8 +207,8 @@ export default function Home() {
               Available for immediate hiring
             </motion.div>
             
-            <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
-              <span className="block dark:text-white text-gray-900 ">Building the</span>
+            <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[1.1]">
+              <span className="block text-gray-900 dark:bg-gradient-to-b dark:from-white dark:to-slate-400 dark:bg-clip-text dark:text-transparent pb-2">Building the</span>
               <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Cognitive Future</span>
             </h1>
             
@@ -252,7 +252,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-6 text-blue-600 dark:text-blue-500 font-bold uppercase tracking-[0.3em] text-xs">
                 <Activity size={18} /> Profile Overview
               </div>
-              <h2 className="text-5xl font-black mb-8 tracking-tight">Intelligence at scale.</h2>
+              <h2 className="text-5xl font-black mb-8 tracking-tight dark:bg-gradient-to-b dark:from-white dark:to-slate-400 dark:bg-clip-text dark:text-transparent">Intelligence at scale.</h2>
               <div className="text-center space-y-6 text-lg text-gray-600 dark:text-slate-300 font-medium leading-relaxed">
                 <p>
                   {personalInfo.about}
@@ -305,7 +305,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-500 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               Live Feed
             </div>
-            <h2 className="text-5xl font-black tracking-tight">Achievements</h2>
+            <h2 className="text-5xl font-black tracking-tight dark:bg-gradient-to-b dark:from-white dark:to-slate-400 dark:bg-clip-text dark:text-transparent">Achievements</h2>
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -364,7 +364,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-4 text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs">
                 <Cpu size={18} /> Research Repository
               </div>
-              <h2 className="text-5xl font-black mb-6 tracking-tight">Technical Output</h2>
+              <h2 className="text-5xl font-black mb-6 tracking-tight dark:bg-gradient-to-b dark:from-white dark:to-slate-400 dark:bg-clip-text dark:text-transparent">Technical Output</h2>
               <p className="text-gray-600 dark:text-slate-300 font-medium leading-relaxed text-lg">
                 Filtering through {publications.length} peer-reviewed works across major venues like ICRA and EMNLP.
               </p>
@@ -475,7 +475,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-4 text-blue-400 font-bold uppercase tracking-widest text-xs">
                 <Server size={18} /> System Capabilities
               </div>
-              <h2 className="text-5xl font-black mb-8 tracking-tight">Technical Stack</h2>
+              <h2 className="text-5xl font-black mb-8 tracking-tight dark:bg-gradient-to-b dark:from-white dark:to-slate-400 dark:bg-clip-text dark:text-transparent">Technical Stack</h2>
               <p className="text-slate-300 text-lg mb-12 leading-relaxed font-medium">
                 Proven proficiency in high-performance computing, distributed systems perception, and real-time deep learning pipelines.
               </p>
