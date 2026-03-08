@@ -23,6 +23,12 @@ jobs:
 
       - run: npm install
       - run: npm run build
+      
+      - name: Export static site
+        run: npm run export
+
+      - name: Add custom domain
+        run: echo "arka-mitra.com" > out/CNAME
 
       - uses: actions/upload-pages-artifact@v3
         with:
