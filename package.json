@@ -39,7 +39,7 @@
     "eslint-config-next": "^16.1.6",
     "framer-motion": "^12.34.5",
     "lucide-react": "^0.576.0",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.10",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
